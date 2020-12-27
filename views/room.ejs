@@ -5,10 +5,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Zoom-clone</title>
 		<script>
-			console.log("<%= roomId %>");
+			const ROOM_ID = "<%= roomId %>";
 		</script>
+		<script
+			defer
+			src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"
+		></script>
+		<script src="/socket.io/socket.io.js" defer></script>
+		<script src="main.js" defer></script>
+		<style>
+			#videoGrid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, 300px);
+				grid-auto-rows: 300px;
+			}
+
+			video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		</style>
 	</head>
 	<body>
-		Hola!
+		<div id="videoGrid"></div>
 	</body>
 </html>
